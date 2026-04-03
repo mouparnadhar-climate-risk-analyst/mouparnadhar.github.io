@@ -12,13 +12,14 @@
     <style>
         body { font-family: 'Inter', sans-serif; }
         .mono { font-family: 'JetBrains Mono', monospace; }
-        .glass { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(52, 211, 153, 0.2); }
+        .glass { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(16px); border: 1px solid rgba(52, 211, 153, 0.2); }
         .text-gradient { background: linear-gradient(to right, #34d399, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .bg-grid { background-image: radial-gradient(rgba(52, 211, 153, 0.1) 1px, transparent 1px); background-size: 30px 30px; }
-        .project-card:hover .project-image { transform: scale(1.05); }
+        .bg-grid { background-image: radial-gradient(rgba(52, 211, 153, 0.1) 1px, transparent 1px); background-size: 40px 40px; }
+        .project-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .project-card:hover { transform: translateY(-10px); border-color: #34d399; box-shadow: 0 20px 40px -20px rgba(52, 211, 153, 0.3); }
     </style>
 </head>
-<body class="bg-[#0b1120] text-slate-200 bg-grid" x-data="{ mobileMenu: false }">
+<body class="bg-[#0b1120] text-slate-200 bg-grid" x-data="{ mobileMenu: false, filter: 'all' }">
 
     <!-- Navigation -->
     <nav class="fixed w-full z-50 glass top-0">
@@ -28,7 +29,6 @@
                 <span class="text-xl font-extrabold tracking-tight text-white uppercase">Mouparna <span class="text-emerald-400">Dhar</span></span>
             </div>
             
-            <!-- Desktop Menu -->
             <div class="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-widest">
                 <a href="#about" class="hover:text-emerald-400 transition-colors">Intelligence</a>
                 <a href="#projects" class="hover:text-emerald-400 transition-colors">Case Studies</a>
@@ -36,17 +36,14 @@
                 <a href="mailto:mouparnadhar2330@gmail.com" class="px-5 py-2 bg-emerald-500 text-slate-900 rounded-full font-bold hover:bg-emerald-400 transition-all transform hover:scale-105">Consult Me</a>
             </div>
 
-            <!-- Mobile Toggle -->
             <button @click="mobileMenu = !mobileMenu" class="md:hidden text-white text-2xl">
                 <i class="fa-solid" :class="mobileMenu ? 'fa-xmark' : 'fa-bars'"></i>
             </button>
         </div>
-        <!-- Mobile Menu -->
         <div x-show="mobileMenu" class="md:hidden glass absolute w-full p-6 flex flex-col gap-4 text-center uppercase tracking-widest">
             <a href="#about" @click="mobileMenu = false" class="py-2">Intelligence</a>
             <a href="#projects" @click="mobileMenu = false" class="py-2">Case Studies</a>
             <a href="#stack" @click="mobileMenu = false" class="py-2">Technical Stack</a>
-            <a href="mailto:mouparnadhar2330@gmail.com" class="py-2 text-emerald-400">Contact</a>
         </div>
     </nav>
 
@@ -58,43 +55,38 @@
                     <i class="fa-solid fa-leaf mr-2"></i> ESG Data Analyst & Climate Risk Specialist
                 </div>
                 <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
-                    Quantifying <span class="text-gradient">Climate Risk</span> for Global Resilience.
+                    Quantifying <span class="text-gradient">Climate Risk</span> <br>for Global Resilience.
                 </h1>
                 <p class="text-lg text-slate-400 mb-8 max-w-xl leading-relaxed">
-                    I transform complex geospatial and climatic datasets into <span class="text-white font-semibold">institutional-grade financial intelligence</span>. Specializing in TCFD, CSRD, and ESRS compliance through advanced remote sensing and predictive analytics.
+                    I engineer <span class="text-white font-semibold">institutional-grade intelligence</span> platforms. Specializing in geospatial risk modeling and regulatory alignment (CSRD, TCFD, ESRS) to protect assets in a volatile climate.
                 </p>
                 <div class="flex flex-wrap gap-4">
-                    <a href="#projects" class="px-8 py-4 bg-white text-slate-900 font-bold rounded-xl hover:bg-emerald-400 transition-all transform hover:-translate-y-1 shadow-lg shadow-emerald-500/20">View Portfolio</a>
+                    <a href="#projects" class="px-8 py-4 bg-emerald-500 text-slate-900 font-bold rounded-xl hover:bg-emerald-400 transition-all transform hover:-translate-y-1 shadow-lg shadow-emerald-500/20">Explore Projects</a>
                     <div class="flex items-center gap-3 px-4">
-                        <a href="https://linkedin.com" class="text-2xl text-slate-400 hover:text-white transition-colors"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="https://github.com" class="text-2xl text-slate-400 hover:text-white transition-colors"><i class="fa-brands fa-github"></i></a>
+                        <a href="#" class="text-2xl text-slate-400 hover:text-white transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#" class="text-2xl text-slate-400 hover:text-white transition-colors"><i class="fa-brands fa-github"></i></a>
                     </div>
                 </div>
             </div>
             <div class="relative hidden lg:block">
-                <!-- Abstract Data Visualization Representation -->
-                <div class="w-full h-[500px] glass rounded-3xl relative overflow-hidden flex items-center justify-center">
-                    <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-blue-500/20"></div>
-                    <div class="relative z-10 p-8 w-full h-full flex flex-col justify-center">
-                        <div class="space-y-4">
-                            <div class="h-4 w-3/4 bg-slate-700 rounded-full animate-pulse"></div>
-                            <div class="h-4 w-1/2 bg-emerald-500/40 rounded-full animate-pulse delay-75"></div>
-                            <div class="h-4 w-5/6 bg-slate-700 rounded-full animate-pulse delay-150"></div>
-                            <div class="h-4 w-2/3 bg-blue-500/40 rounded-full animate-pulse delay-200"></div>
+                <div class="w-full h-[500px] glass rounded-3xl relative overflow-hidden flex items-center justify-center p-4">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1000" class="absolute inset-0 w-full h-full object-cover opacity-40" alt="Earth Data">
+                    <div class="relative z-10 grid grid-cols-2 gap-4 w-full">
+                        <div class="p-6 glass rounded-2xl text-center border-emerald-500/50">
+                            <div class="text-emerald-400 font-bold text-3xl">AED 4.11B</div>
+                            <div class="text-[10px] text-slate-400 uppercase mono">Stranded Risk Quantified</div>
                         </div>
-                        <div class="mt-12 grid grid-cols-3 gap-4">
-                            <div class="p-4 glass rounded-xl text-center">
-                                <div class="text-emerald-400 font-bold text-xl">AED 4.11B</div>
-                                <div class="text-[10px] text-slate-500 uppercase">Stranded Risk</div>
-                            </div>
-                            <div class="p-4 glass rounded-xl text-center">
-                                <div class="text-blue-400 font-bold text-xl">2,051 Ha</div>
-                                <div class="text-[10px] text-slate-500 uppercase">Monitored</div>
-                            </div>
-                            <div class="p-4 glass rounded-xl text-center">
-                                <div class="text-purple-400 font-bold text-xl">R² 0.998</div>
-                                <div class="text-[10px] text-slate-500 uppercase">Accuracy</div>
-                            </div>
+                        <div class="p-6 glass rounded-2xl text-center border-blue-500/50">
+                            <div class="text-blue-400 font-bold text-3xl">2,051 Ha</div>
+                            <div class="text-[10px] text-slate-400 uppercase mono">Ecosystems Monitored</div>
+                        </div>
+                        <div class="p-6 glass rounded-2xl text-center border-purple-500/50">
+                            <div class="text-purple-400 font-bold text-3xl">R² 0.998</div>
+                            <div class="text-[10px] text-slate-400 uppercase mono">Predictive Accuracy</div>
+                        </div>
+                        <div class="p-6 glass rounded-2xl text-center border-emerald-500/50">
+                            <div class="text-emerald-400 font-bold text-3xl">6+ APIs</div>
+                            <div class="text-[10px] text-slate-400 uppercase mono">Real-time Data Fusion</div>
                         </div>
                     </div>
                 </div>
@@ -102,98 +94,168 @@
         </div>
     </section>
 
-    <!-- Intelligence / Expertise Section -->
+    <!-- Intelligence Section -->
     <section id="about" class="py-24 px-6 bg-slate-900/50">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Core <span class="text-emerald-400">Intelligence</span></h2>
-                <p class="text-slate-400">Merging environmental science with financial risk modeling.</p>
+        <div class="max-w-7xl mx-auto text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Core <span class="text-emerald-400">Intelligence</span></h2>
+            <p class="text-slate-400">Merging Environmental Science with Financial Risk Engineering.</p>
+        </div>
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+            <div class="p-8 glass rounded-3xl hover:border-emerald-500/50 transition-all">
+                <div class="w-12 h-12 bg-emerald-500/20 text-emerald-400 rounded-xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-satellite"></i></div>
+                <h3 class="text-xl font-bold text-white mb-3">Geospatial Analytics</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Advanced use of GEE, Sentinel-1/2, and Copernicus GLO-30 for precise physical risk mapping and asset vulnerability.</p>
             </div>
-            
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Expertise 1 -->
-                <div class="p-8 glass rounded-3xl hover:border-emerald-500/50 transition-all group">
-                    <div class="w-12 h-12 bg-emerald-500/20 text-emerald-400 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-earth-americas"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Geospatial Analytics</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Leveraging Google Earth Engine, Sentinel-1/2, and Copernicus GLO-30 for high-resolution physical risk mapping.</p>
-                </div>
-                <!-- Expertise 2 -->
-                <div class="p-8 glass rounded-3xl hover:border-blue-500/50 transition-all group">
-                    <div class="w-12 h-12 bg-blue-500/20 text-blue-400 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-chart-line"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">ESG Compliance</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Translating spatial datasets into actionable reporting aligned with CSRD, TCFD, ESRS, and IPCC AR6 frameworks.</p>
-                </div>
-                <!-- Expertise 3 -->
-                <div class="p-8 glass rounded-3xl hover:border-purple-500/50 transition-all group">
-                    <div class="w-12 h-12 bg-purple-500/20 text-purple-400 rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-money-bill-trend-up"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-3">Sustainable Finance</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">Quantifying climate-adjusted Adaptation ROI, Green Premiums, and Stranded Asset forecasting across 60-year horizons.</p>
-                </div>
+            <div class="p-8 glass rounded-3xl hover:border-blue-500/50 transition-all">
+                <div class="w-12 h-12 bg-blue-500/20 text-blue-400 rounded-xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-file-contract"></i></div>
+                <h3 class="text-xl font-bold text-white mb-3">ESG Frameworks</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Expert implementation of CSRD, TCFD, and ESRS standards to generate audit-ready corporate climate disclosures.</p>
+            </div>
+            <div class="p-8 glass rounded-3xl hover:border-purple-500/50 transition-all">
+                <div class="w-12 h-12 bg-purple-500/20 text-purple-400 rounded-xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-chart-pie"></i></div>
+                <h3 class="text-xl font-bold text-white mb-3">Risk Modelling</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Quantifying Stranded Asset risk, Adaptation ROI, and transition risks across 60-year IPCC horizons.</p>
             </div>
         </div>
     </section>
 
-    <!-- Project Section -->
+    <!-- Projects Section -->
     <section id="projects" class="py-24 px-6">
         <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
                 <div>
                     <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Case <span class="text-emerald-400">Studies</span></h2>
-                    <p class="text-slate-400 max-w-lg">Institutional-grade platforms and models engineered to tackle the climate crisis.</p>
+                    <p class="text-slate-400 max-w-lg">A comprehensive portfolio of institutional platforms and academic research.</p>
                 </div>
-                <div class="mono text-xs text-emerald-500 font-bold uppercase tracking-widest">Selected Portfolio 2025-2026</div>
+                <!-- INTERACTIVE FILTER -->
+                <div class="flex bg-slate-800 p-1 rounded-xl mono text-xs font-bold uppercase">
+                    <button @click="filter = 'all'" :class="filter === 'all' ? 'bg-emerald-500 text-slate-900' : 'text-slate-400'" class="px-4 py-2 rounded-lg transition-all">All</button>
+                    <button @click="filter = 'institutional'" :class="filter === 'institutional' ? 'bg-emerald-500 text-slate-900' : 'text-slate-400'" class="px-4 py-2 rounded-lg transition-all">Institutional</button>
+                    <button @click="filter = 'academic'" :class="filter === 'academic' ? 'bg-emerald-500 text-slate-900' : 'text-slate-400'" class="px-4 py-2 rounded-lg transition-all">Academic</button>
+                </div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-12">
-                <!-- Project 1 -->
-                <div class="project-card group relative overflow-hidden rounded-3xl glass">
-                    <div class="h-64 bg-slate-800 relative overflow-hidden">
-                        <div class="project-image absolute inset-0 bg-gradient-to-br from-emerald-900 to-slate-900 transition-transform duration-500 flex items-center justify-center">
-                             <i class="fa-solid fa-cloud-sun-rain text-6xl text-emerald-500/30"></i>
-                        </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- PROJECT 1: TerraQuant -->
+                <div x-show="filter === 'all' || filter === 'institutional'" class="project-card glass rounded-3xl overflow-hidden flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38a71?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="TerraQuant">
                         <div class="absolute top-4 right-4 px-3 py-1 glass rounded-full text-[10px] font-bold text-emerald-400 uppercase">SaaS • CSRD</div>
                     </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-white mb-3">ClimateVault Intelligence</h3>
-                        <p class="text-slate-400 text-sm mb-6">A SaaS platform for localised climate stress-testing of real-estate assets. Integrated Double Materiality engines and 6 global APIs.</p>
-                        <div class="flex flex-wrap gap-2 mb-8">
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-bold text-white mb-2">TerraQuant Platform</h3>
+                        <p class="text-slate-400 text-sm mb-4">Institutional SaaS for localised climate stress-testing of global real-estate assets. Integrated 6 global APIs.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
                             <span class="text-[10px] px-2 py-1 rounded bg-slate-800 text-slate-300 mono">React 18</span>
-                            <span class="text-[10px] px-2 py-1 rounded bg-slate-800 text-slate-300 mono">Tailwind</span>
                             <span class="text-[10px] px-2 py-1 rounded bg-slate-800 text-slate-300 mono">jsPDF</span>
                         </div>
-                        <a href="https://climate-vault.netlify.app/" class="inline-flex items-center gap-2 text-emerald-400 font-bold text-sm hover:gap-4 transition-all">
-                            Explore Platform <i class="fa-solid fa-arrow-right"></i>
-                        </a>
+                        <a href="https://terraquant.netlify.app/" class="text-emerald-400 font-bold text-sm hover:underline inline-flex items-center gap-2">Visit Site <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
                     </div>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="project-card group relative overflow-hidden rounded-3xl glass">
-                    <div class="h-64 bg-slate-800 relative overflow-hidden">
-                        <div class="project-image absolute inset-0 bg-gradient-to-br from-blue-900 to-slate-900 transition-transform duration-500 flex items-center justify-center">
-                             <i class="fa-solid fa-satellite text-6xl text-blue-500/30"></i>
-                        </div>
+                <!-- PROJECT 2: Alutaguse -->
+                <div x-show="filter === 'all' || filter === 'institutional'" class="project-card glass rounded-3xl overflow-hidden flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover" alt="Peatland">
                         <div class="absolute top-4 right-4 px-3 py-1 glass rounded-full text-[10px] font-bold text-blue-400 uppercase">Remote Sensing</div>
                     </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-white mb-3">Alutaguse Peatland Monitor</h3>
-                        <p class="text-slate-400 text-sm mb-6">EO Digital Twin via Google Earth Engine. Developed multi-sensor fusion (Sentinel-1 & 2) for carbon liability mitigation simulation.</p>
-                        <div class="flex flex-wrap gap-2 mb-8">
-                            <span class="text-[10px] px-2 py-1 rounded bg-slate-800 text-slate-300 mono">GEE Python API</span>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-bold text-white mb-2">Alutaguse Peatland Monitor</h3>
+                        <p class="text-slate-400 text-sm mb-4">EO Digital Twin using GEE Python API to monitor hydrological recovery and carbon liability (EUR 132k+).</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-[10px] px-2 py-1 rounded bg-slate-800 text-slate-300 mono">GEE API</span>
                             <span class="text-[10px] px-2 py-1 rounded bg-slate-800 text-slate-300 mono">Docker</span>
-                            <span class="text-[10px] px-2 py-1 rounded bg-slate-800 text-slate-300 mono">ERA5-Land</span>
                         </div>
-                        <a href="#" class="inline-flex items-center gap-2 text-blue-400 font-bold text-sm hover:gap-4 transition-all">
-                            View Space Demo <i class="fa-solid fa-arrow-right"></i>
-                        </a>
+                        <a href="#" class="text-blue-400 font-bold text-sm hover:underline inline-flex items-center gap-2">View Demo <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
                     </div>
                 </div>
+
+                <!-- PROJECT 3: Palm Jumeirah -->
+                <div x-show="filter === 'all' || filter === 'institutional'" class="project-card glass rounded-3xl overflow-hidden flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1582672060677-6f857db279b7?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover" alt="Palm Jumeirah">
+                        <div class="absolute top-4 right-4 px-3 py-1 glass rounded-full text-[10px] font-bold text-purple-400 uppercase">Stranded Assets</div>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-bold text-white mb-2">Palm Jumeirah Index 2050</h3>
+                        <p class="text-slate-400 text-sm mb-4">Quantified AED 4.11B in stranded-asset risk via 2050 coastal inundation models (IPCC AR6 SSP5-8.5).</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-[10px] px-2 py-1 rounded bg-slate-800 text-slate-300 mono">SQL Spatial</span>
+                            <span class="text-[10px] px-2 py-1 rounded bg-slate-800 text-slate-300 mono">Copernicus</span>
+                        </div>
+                        <a href="#" class="text-purple-400 font-bold text-sm hover:underline inline-flex items-center gap-2">View Study <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- PROJECT 4: MBR Solar -->
+                <div x-show="filter === 'all' || filter === 'institutional'" class="project-card glass rounded-3xl overflow-hidden flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1509391366360-2b1bb FedEx-8f7?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover" alt="Solar Park">
+                        <div class="absolute top-4 right-4 px-3 py-1 glass rounded-full text-[10px] font-bold text-yellow-400 uppercase">Capital Opt</div>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-bold text-white mb-2">MBR Solar Park Phase 7</h3>
+                        <p class="text-slate-400 text-sm mb-4">MCDA framework optimizing utility-scale solar expansion, identifying AED 233M lifecycle value gap.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-[10px] px-2 py-1 rounded bg-slate-800 text-slate-300 mono">MCDA</span>
+                            <span class="text-[10px] px-2 py-1 rounded bg-slate-800 text-slate-300 mono">NASA MODIS</span>
+                        </div>
+                        <a href="#" class="text-yellow-400 font-bold text-sm hover:underline inline-flex items-center gap-2">View Analysis <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- PROJECT 5: Dissertation -->
+                <div x-show="filter === 'all' || filter === 'academic'" class="project-card glass rounded-3xl overflow-hidden flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1454165833767-027ffca91c1e?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover" alt="Research">
+                        <div class="absolute top-4 right-4 px-3 py-1 glass rounded-full text-[10px] font-bold text-slate-400 uppercase">Master's Thesis</div>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-bold text-white mb-2">Public Service Efficacy</h3>
+                        <p class="text-slate-400 text-sm mb-4">Applying Importance-Performance Analysis (IPA) to prioritize resource allocation in Puruliya District.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-[10px] px-2 py-1 rounded bg-slate-800 text-slate-300 mono">IPA</span>
+                            <span class="text-[10px] px-2 py-1 rounded bg-slate-800 text-slate-300 mono">Admin Data</span>
+                        </div>
+                        <a href="#" class="text-slate-400 font-bold text-sm hover:underline inline-flex items-center gap-2">Read Paper <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- PROJECT 6: Sundarbans -->
+                <div x-show="filter === 'all' || filter === 'academic'" class="project-card glass rounded-3xl overflow-hidden flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover" alt="Sundarbans">
+                        <div class="absolute top-4 right-4 px-3 py-1 glass rounded-full text-[10px] font-bold text-slate-400 uppercase">Field Research</div>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-bold text-white mb-2">Sundarbans Degradation</h3>
+                        <p class="text-slate-400 text-sm mb-4">Mapping environmental decay in coastal regions to predict socio-economic displacement via GIS.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-[10px] px-2 py-1 rounded bg-slate-800 text-slate-300 mono">GIS</span>
+                            <span class="text-[10px] px-2 py-1 rounded bg-slate-800 text-slate-300 mono">Socio-Economic</span>
+                        </div>
+                        <a href="#" class="text-slate-400 font-bold text-sm hover:underline inline-flex items-center gap-2">View Report <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+                    </div>
+                </div>
+
+                <!-- PROJECT 7: Shantiniketan -->
+                <div x-show="filter === 'all' || filter === 'academic'" class="project-card glass rounded-3xl overflow-hidden flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover" alt="Shantiniketan">
+                        <div class="absolute top-4 right-4 px-3 py-1 glass rounded-full text-[10px] font-bold text-slate-400 uppercase">Social Impact</div>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-bold text-white mb-2">Shantiniketan Tribal Study</h3>
+                        <p class="text-slate-400 text-sm mb-4">End-to-end field research assessing living standards of marginalised populations for resource advocacy.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="text-[10px] px-2 py-1 rounded bg-slate-800 text-slate-300 mono">Field Research</span>
+                            <span class="text-[10px] px-2 py-1 rounded bg-slate-800 text-slate-300 mono">Impact Assessment</span>
+                        </div>
+                        <a href="#" class="text-slate-400 font-bold text-sm hover:underline inline-flex items-center gap-2">View Report <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -203,53 +265,46 @@
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Technical <span class="text-emerald-400">Stack</span></h2>
-                <p class="text-slate-400">The tools used to quantify environmental volatility.</p>
+                <p class="text-slate-400">The engine behind the intelligence.</p>
             </div>
-
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <!-- Skill 1 -->
                 <div class="p-6 glass rounded-2xl text-center hover:bg-emerald-500/10 transition-colors group">
                     <i class="fa-brands fa-python text-4xl text-slate-500 group-hover:text-emerald-400 transition-colors mb-4"></i>
                     <div class="font-bold text-white">Python</div>
                     <div class="text-xs text-slate-500 mono">Analysis & Modeling</div>
                 </div>
-                <!-- Skill 2 -->
                 <div class="p-6 glass rounded-2xl text-center hover:bg-emerald-500/10 transition-colors group">
-                    <i class="fa-solid fa-database text-4xl text-slate-500 group-hover:text-emerald-400 transition-colors mb-4"></i>
-                    <div class="font-bold text-white">SQL (Spatial)</div>
-                    <div class="text-xs text-slate-500 mono">PostGIS / Joins</div>
+                    <i class="fa-solid fa-map-location-dot text-4xl text-slate-500 group-hover:text-emerald-400 transition-colors mb-4"></i>
+                    <div class="font-bold text-white">QGIS / GEE</div>
+                    <div class="text-xs text-slate-500 mono">Geospatial Intelligence</div>
                 </div>
-                <!-- Skill 3 -->
                 <div class="p-6 glass rounded-2xl text-center hover:bg-emerald-500/10 transition-colors group">
                     <i class="fa-brands fa-react text-4xl text-slate-500 group-hover:text-emerald-400 transition-colors mb-4"></i>
                     <div class="font-bold text-white">React 18</div>
-                    <div class="text-xs text-slate-500 mono">UI/UX Engineering</div>
+                    <div class="text-xs text-slate-500 mono">Frontend Engineering</div>
                 </div>
-                <!-- Skill 4 -->
                 <div class="p-6 glass rounded-2xl text-center hover:bg-emerald-500/10 transition-colors group">
-                    <i class="fa-solid fa-map-location-dot text-4xl text-slate-500 group-hover:text-emerald-400 transition-colors mb-4"></i>
-                    <div class="font-bold text-white">QGIS / ArcGIS</div>
-                    <div class="text-xs text-slate-500 mono">Geospatial Viz</div>
+                    <i class="fa-solid fa-database text-4xl text-slate-500 group-hover:text-emerald-400 transition-colors mb-4"></i>
+                    <div class="font-bold text-white">SQL Spatial</div>
+                    <div class="text-xs text-slate-500 mono">Data Architecture</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact / Footer -->
+    <!-- Footer -->
     <footer class="py-20 px-6 border-t border-slate-800">
         <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-4xl font-bold text-white mb-6">Ready to <span class="text-gradient">De-Risk</span> Your Assets?</h2>
-            <p class="text-slate-400 mb-10 max-w-lg mx-auto">Available for high-ticket consulting, institutional risk modeling, and ESG framework alignment.</p>
+            <h2 class="text-4xl font-bold text-white mb-6">Secure Your <span class="text-gradient">Future Assets</span></h2>
+            <p class="text-slate-400 mb-10 max-w-lg mx-auto">Providing institutional-grade climate risk assessments and ESG compliance consulting.</p>
             <a href="mailto:mouparnadhar2330@gmail.com" class="px-10 py-5 bg-emerald-500 text-slate-900 font-bold rounded-2xl hover:bg-emerald-400 transition-all transform hover:scale-110 inline-block shadow-xl shadow-emerald-500/20">
-                Start a Conversation <i class="fa-solid fa-paper-plane ml-2"></i>
+                Request a Consultation <i class="fa-solid fa-paper-plane ml-2"></i>
             </a>
-            
             <div class="mt-20 pt-10 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-6 text-slate-500 text-xs mono uppercase tracking-widest">
-                <div>© 2026 Mouparna Dhar | Climate Intelligence Portfolio</div>
+                <div>© 2026 Mouparna Dhar | ESG Intelligence Portfolio</div>
                 <div class="flex gap-6">
                     <a href="#" class="hover:text-white">LinkedIn</a>
                     <a href="#" class="hover:text-white">GitHub</a>
-                    <a href="#" class="hover:text-white">Google Scholar</a>
                 </div>
             </div>
         </div>
