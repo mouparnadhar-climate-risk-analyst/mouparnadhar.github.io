@@ -12,11 +12,11 @@
     <style>
         body { font-family: 'Inter', sans-serif; }
         .mono { font-family: 'JetBrains Mono', monospace; }
-        .glass { background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(16px); border: 1px solid rgba(52, 211, 153, 0.2); }
+        .glass { background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(16px); border: 1px solid rgba(52, 211, 153, 0.2); }
         .text-gradient { background: linear-gradient(to right, #34d399, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .bg-grid { background-image: radial-gradient(rgba(52, 211, 153, 0.1) 1px, transparent 1px); background-size: 40px 40px; }
         .project-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        .project-card:hover { transform: translateY(-10px); border-color: #34d399; box-shadow: 0 20px 40px -20px rgba(52, 211, 153, 0.3); }
+        .project-card:hover { transform: translateY(-8px); border-color: #34d399; box-shadow: 0 20px 40px -20px rgba(52, 211, 153, 0.3); }
     </style>
 </head>
 <body class="bg-[#0b1120] text-slate-200 bg-grid" x-data="{ mobileMenu: false, filter: 'all' }">
@@ -30,9 +30,9 @@
             </div>
             
             <div class="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-widest">
-                <a href="#about" class="hover:text-emerald-400 transition-colors">Intelligence</a>
+                <a href="#about" class="hover:text-emerald-400 transition-colors">Expertise</a>
                 <a href="#projects" class="hover:text-emerald-400 transition-colors">Case Studies</a>
-                <a href="#stack" class="hover:text-emerald-400 transition-colors">Technical Stack</a>
+                <a href="#stack" class="hover:text-emerald-400 transition-colors">Tech Stack</a>
                 <a href="mailto:mouparnadhar2330@gmail.com" class="px-5 py-2 bg-emerald-500 text-slate-900 rounded-full font-bold hover:bg-emerald-400 transition-all transform hover:scale-105">Consult Me</a>
             </div>
 
@@ -41,9 +41,9 @@
             </button>
         </div>
         <div x-show="mobileMenu" class="md:hidden glass absolute w-full p-6 flex flex-col gap-4 text-center uppercase tracking-widest">
-            <a href="#about" @click="mobileMenu = false" class="py-2">Intelligence</a>
+            <a href="#about" @click="mobileMenu = false" class="py-2">Expertise</a>
             <a href="#projects" @click="mobileMenu = false" class="py-2">Case Studies</a>
-            <a href="#stack" @click="mobileMenu = false" class="py-2">Technical Stack</a>
+            <a href="#stack" @click="mobileMenu = false" class="py-2">Tech Stack</a>
         </div>
     </nav>
 
@@ -58,10 +58,10 @@
                     Quantifying <span class="text-gradient">Climate Risk</span> <br>for Global Resilience.
                 </h1>
                 <p class="text-lg text-slate-400 mb-8 max-w-xl leading-relaxed">
-                    I engineer <span class="text-white font-semibold">institutional-grade intelligence</span> platforms. Specializing in geospatial risk modeling and regulatory alignment (CSRD, TCFD, ESRS) to protect assets in a volatile climate.
+                    I engineer <span class="text-white font-semibold">institutional-grade intelligence</span> platforms. Specialized in geospatial risk modeling and regulatory alignment (CSRD, TCFD, ESRS).
                 </p>
                 <div class="flex flex-wrap gap-4">
-                    <a href="#projects" class="px-8 py-4 bg-emerald-500 text-slate-900 font-bold rounded-xl hover:bg-emerald-400 transition-all transform hover:-translate-y-1 shadow-lg shadow-emerald-500/20">Explore Projects</a>
+                    <a href="#projects" class="px-8 py-4 bg-emerald-500 text-slate-900 font-bold rounded-xl hover:bg-emerald-400 transition-all transform hover:-translate-y-1 shadow-lg shadow-emerald-500/20">View Case Studies</a>
                     <div class="flex items-center gap-3 px-4">
                         <a href="#" class="text-2xl text-slate-400 hover:text-white transition-colors"><i class="fa-brands fa-linkedin"></i></a>
                         <a href="#" class="text-2xl text-slate-400 hover:text-white transition-colors"><i class="fa-brands fa-github"></i></a>
@@ -70,7 +70,8 @@
             </div>
             <div class="relative hidden lg:block">
                 <div class="w-full h-[500px] glass rounded-3xl relative overflow-hidden flex items-center justify-center p-4">
-                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1000" class="absolute inset-0 w-full h-full object-cover opacity-40" alt="Earth Data">
+                    <!-- High Stability Background Image -->
+                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80&w=1000" class="absolute inset-0 w-full h-full object-cover opacity-30" alt="Nature Data">
                     <div class="relative z-10 grid grid-cols-2 gap-4 w-full">
                         <div class="p-6 glass rounded-2xl text-center border-emerald-500/50">
                             <div class="text-emerald-400 font-bold text-3xl">AED 4.11B</div>
@@ -94,10 +95,10 @@
         </div>
     </section>
 
-    <!-- Intelligence Section -->
+    <!-- Expertise Section -->
     <section id="about" class="py-24 px-6 bg-slate-900/50">
         <div class="max-w-7xl mx-auto text-center mb-16">
-            <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Core <span class="text-emerald-400">Intelligence</span></h2>
+            <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Core <span class="text-emerald-400">Expertise</span></h2>
             <p class="text-slate-400">Merging Environmental Science with Financial Risk Engineering.</p>
         </div>
         <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
@@ -125,7 +126,7 @@
             <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
                 <div>
                     <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Case <span class="text-emerald-400">Studies</span></h2>
-                    <p class="text-slate-400 max-w-lg">A comprehensive portfolio of institutional platforms and academic research.</p>
+                    <p class="text-slate-400 max-w-lg">Verified institutional platforms and academic research with full documentation.</p>
                 </div>
                 <!-- INTERACTIVE FILTER -->
                 <div class="flex bg-slate-800 p-1 rounded-xl mono text-xs font-bold uppercase">
@@ -140,7 +141,8 @@
                 <!-- PROJECT 1: TerraQuant -->
                 <div x-show="filter === 'all' || filter === 'institutional'" class="project-card glass rounded-3xl overflow-hidden flex flex-col">
                     <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38a71?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="TerraQuant">
+                        <!-- REPLACE THIS URL WITH YOUR OWN SCREENSHOT -->
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38a71?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover transition-transform duration-500" alt="TerraQuant">
                         <div class="absolute top-4 right-4 px-3 py-1 glass rounded-full text-[10px] font-bold text-emerald-400 uppercase">SaaS • CSRD</div>
                     </div>
                     <div class="p-6 flex-grow">
@@ -157,6 +159,7 @@
                 <!-- PROJECT 2: Alutaguse -->
                 <div x-show="filter === 'all' || filter === 'institutional'" class="project-card glass rounded-3xl overflow-hidden flex flex-col">
                     <div class="h-48 overflow-hidden relative">
+                        <!-- REPLACE THIS URL WITH YOUR OWN SCREENSHOT -->
                         <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover" alt="Peatland">
                         <div class="absolute top-4 right-4 px-3 py-1 glass rounded-full text-[10px] font-bold text-blue-400 uppercase">Remote Sensing</div>
                     </div>
@@ -174,6 +177,7 @@
                 <!-- PROJECT 3: Palm Jumeirah -->
                 <div x-show="filter === 'all' || filter === 'institutional'" class="project-card glass rounded-3xl overflow-hidden flex flex-col">
                     <div class="h-48 overflow-hidden relative">
+                        <!-- REPLACE THIS URL WITH YOUR OWN SCREENSHOT -->
                         <img src="https://images.unsplash.com/photo-1582672060677-6f857db279b7?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover" alt="Palm Jumeirah">
                         <div class="absolute top-4 right-4 px-3 py-1 glass rounded-full text-[10px] font-bold text-purple-400 uppercase">Stranded Assets</div>
                     </div>
@@ -191,6 +195,7 @@
                 <!-- PROJECT 4: MBR Solar -->
                 <div x-show="filter === 'all' || filter === 'institutional'" class="project-card glass rounded-3xl overflow-hidden flex flex-col">
                     <div class="h-48 overflow-hidden relative">
+                        <!-- REPLACE THIS URL WITH YOUR OWN SCREENSHOT -->
                         <img src="https://images.unsplash.com/photo-1509391366360-2b1bb FedEx-8f7?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover" alt="Solar Park">
                         <div class="absolute top-4 right-4 px-3 py-1 glass rounded-full text-[10px] font-bold text-yellow-400 uppercase">Capital Opt</div>
                     </div>
@@ -208,6 +213,7 @@
                 <!-- PROJECT 5: Dissertation -->
                 <div x-show="filter === 'all' || filter === 'academic'" class="project-card glass rounded-3xl overflow-hidden flex flex-col">
                     <div class="h-48 overflow-hidden relative">
+                        <!-- REPLACE THIS URL WITH YOUR OWN SCREENSHOT -->
                         <img src="https://images.unsplash.com/photo-1454165833767-027ffca91c1e?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover" alt="Research">
                         <div class="absolute top-4 right-4 px-3 py-1 glass rounded-full text-[10px] font-bold text-slate-400 uppercase">Master's Thesis</div>
                     </div>
@@ -219,40 +225,6 @@
                             <span class="text-[10px] px-2 py-1 rounded bg-slate-800 text-slate-300 mono">Admin Data</span>
                         </div>
                         <a href="#" class="text-slate-400 font-bold text-sm hover:underline inline-flex items-center gap-2">Read Paper <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
-                    </div>
-                </div>
-
-                <!-- PROJECT 6: Sundarbans -->
-                <div x-show="filter === 'all' || filter === 'academic'" class="project-card glass rounded-3xl overflow-hidden flex flex-col">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover" alt="Sundarbans">
-                        <div class="absolute top-4 right-4 px-3 py-1 glass rounded-full text-[10px] font-bold text-slate-400 uppercase">Field Research</div>
-                    </div>
-                    <div class="p-6 flex-grow">
-                        <h3 class="text-xl font-bold text-white mb-2">Sundarbans Degradation</h3>
-                        <p class="text-slate-400 text-sm mb-4">Mapping environmental decay in coastal regions to predict socio-economic displacement via GIS.</p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-[10px] px-2 py-1 rounded bg-slate-800 text-slate-300 mono">GIS</span>
-                            <span class="text-[10px] px-2 py-1 rounded bg-slate-800 text-slate-300 mono">Socio-Economic</span>
-                        </div>
-                        <a href="#" class="text-slate-400 font-bold text-sm hover:underline inline-flex items-center gap-2">View Report <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
-                    </div>
-                </div>
-
-                <!-- PROJECT 7: Shantiniketan -->
-                <div x-show="filter === 'all' || filter === 'academic'" class="project-card glass rounded-3xl overflow-hidden flex flex-col">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover" alt="Shantiniketan">
-                        <div class="absolute top-4 right-4 px-3 py-1 glass rounded-full text-[10px] font-bold text-slate-400 uppercase">Social Impact</div>
-                    </div>
-                    <div class="p-6 flex-grow">
-                        <h3 class="text-xl font-bold text-white mb-2">Shantiniketan Tribal Study</h3>
-                        <p class="text-slate-400 text-sm mb-4">End-to-end field research assessing living standards of marginalised populations for resource advocacy.</p>
-                        <div class="flex flex-wrap gap-2 mb-6">
-                            <span class="text-[10px] px-2 py-1 rounded bg-slate-800 text-slate-300 mono">Field Research</span>
-                            <span class="text-[10px] px-2 py-1 rounded bg-slate-800 text-slate-300 mono">Impact Assessment</span>
-                        </div>
-                        <a href="#" class="text-slate-400 font-bold text-sm hover:underline inline-flex items-center gap-2">View Report <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a>
                     </div>
                 </div>
 
