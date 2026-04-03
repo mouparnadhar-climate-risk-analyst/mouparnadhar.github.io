@@ -28,14 +28,12 @@
                 <div class="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center text-slate-900 font-bold">MD</div>
                 <span class="text-xl font-extrabold tracking-tight text-white uppercase">Mouparna <span class="text-emerald-400">Dhar</span></span>
             </div>
-            
             <div class="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-widest">
                 <a href="#about" class="hover:text-emerald-400 transition-colors">Expertise</a>
                 <a href="#projects" class="hover:text-emerald-400 transition-colors">Case Studies</a>
                 <a href="#stack" class="hover:text-emerald-400 transition-colors">Tech Stack</a>
                 <a href="mailto:mouparnadhar2330@gmail.com" class="px-5 py-2 bg-emerald-500 text-slate-900 rounded-full font-bold hover:bg-emerald-400 transition-all transform hover:scale-105">Consult Me</a>
             </div>
-
             <button @click="mobileMenu = !mobileMenu" class="md:hidden text-white text-2xl">
                 <i class="fa-solid" :class="mobileMenu ? 'fa-xmark' : 'fa-bars'"></i>
             </button>
@@ -70,24 +68,23 @@
             </div>
             <div class="relative hidden lg:block">
                 <div class="w-full h-[500px] glass rounded-3xl relative overflow-hidden flex items-center justify-center p-4">
-                    <!-- High Stability Background Image -->
-                    <img src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80&w=1000" class="absolute inset-0 w-full h-full object-cover opacity-30" alt="Nature Data">
+                    <img src="terraquant.jpg" class="absolute inset-0 w-full h-full object-cover opacity-30" alt="Hero Background">
                     <div class="relative z-10 grid grid-cols-2 gap-4 w-full">
                         <div class="p-6 glass rounded-2xl text-center border-emerald-500/50">
                             <div class="text-emerald-400 font-bold text-3xl">AED 4.11B</div>
-                            <div class="text-[10px] text-slate-400 uppercase mono">Stranded Risk Quantified</div>
+                            <div class="text-[10px] text-slate-400 uppercase mono">Stranded Risk</div>
                         </div>
                         <div class="p-6 glass rounded-2xl text-center border-blue-500/50">
                             <div class="text-blue-400 font-bold text-3xl">2,051 Ha</div>
-                            <div class="text-[10px] text-slate-400 uppercase mono">Ecosystems Monitored</div>
+                            <div class="text-[10px] text-slate-400 uppercase mono">Monitored</div>
                         </div>
                         <div class="p-6 glass rounded-2xl text-center border-purple-500/50">
                             <div class="text-purple-400 font-bold text-3xl">R² 0.998</div>
-                            <div class="text-[10px] text-slate-400 uppercase mono">Predictive Accuracy</div>
+                            <div class="text-[10px] text-slate-400 uppercase mono">Accuracy</div>
                         </div>
                         <div class="p-6 glass rounded-2xl text-center border-emerald-500/50">
                             <div class="text-emerald-400 font-bold text-3xl">6+ APIs</div>
-                            <div class="text-[10px] text-slate-400 uppercase mono">Real-time Data Fusion</div>
+                            <div class="text-[10px] text-slate-400 uppercase mono">Data Fusion</div>
                         </div>
                     </div>
                 </div>
@@ -128,7 +125,6 @@
                     <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Case <span class="text-emerald-400">Studies</span></h2>
                     <p class="text-slate-400 max-w-lg">Verified institutional platforms and academic research with full documentation.</p>
                 </div>
-                <!-- INTERACTIVE FILTER -->
                 <div class="flex bg-slate-800 p-1 rounded-xl mono text-xs font-bold uppercase">
                     <button @click="filter = 'all'" :class="filter === 'all' ? 'bg-emerald-500 text-slate-900' : 'text-slate-400'" class="px-4 py-2 rounded-lg transition-all">All</button>
                     <button @click="filter = 'institutional'" :class="filter === 'institutional' ? 'bg-emerald-500 text-slate-900' : 'text-slate-400'" class="px-4 py-2 rounded-lg transition-all">Institutional</button>
@@ -141,8 +137,7 @@
                 <!-- PROJECT 1: TerraQuant -->
                 <div x-show="filter === 'all' || filter === 'institutional'" class="project-card glass rounded-3xl overflow-hidden flex flex-col">
                     <div class="h-48 overflow-hidden relative">
-                        <!-- REPLACE THIS URL WITH YOUR OWN SCREENSHOT -->
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38a71?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover transition-transform duration-500" alt="TerraQuant">
+                        <img src="terraquant.jpg" class="w-full h-full object-cover transition-transform duration-500" alt="TerraQuant">
                         <div class="absolute top-4 right-4 px-3 py-1 glass rounded-full text-[10px] font-bold text-emerald-400 uppercase">SaaS • CSRD</div>
                     </div>
                     <div class="p-6 flex-grow">
@@ -159,7 +154,6 @@
                 <!-- PROJECT 2: Alutaguse -->
                 <div x-show="filter === 'all' || filter === 'institutional'" class="project-card glass rounded-3xl overflow-hidden flex flex-col">
                     <div class="h-48 overflow-hidden relative">
-                        <!-- REPLACE THIS URL WITH YOUR OWN SCREENSHOT -->
                         <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover" alt="Peatland">
                         <div class="absolute top-4 right-4 px-3 py-1 glass rounded-full text-[10px] font-bold text-blue-400 uppercase">Remote Sensing</div>
                     </div>
@@ -177,8 +171,7 @@
                 <!-- PROJECT 3: Palm Jumeirah -->
                 <div x-show="filter === 'all' || filter === 'institutional'" class="project-card glass rounded-3xl overflow-hidden flex flex-col">
                     <div class="h-48 overflow-hidden relative">
-                        <!-- REPLACE THIS URL WITH YOUR OWN SCREENSHOT -->
-                        <img src="https://images.unsplash.com/photo-1582672060677-6f857db279b7?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover" alt="Palm Jumeirah">
+                        <img src="palm.jpg" class="w-full h-full object-cover" alt="Palm Jumeirah">
                         <div class="absolute top-4 right-4 px-3 py-1 glass rounded-full text-[10px] font-bold text-purple-400 uppercase">Stranded Assets</div>
                     </div>
                     <div class="p-6 flex-grow">
@@ -195,8 +188,7 @@
                 <!-- PROJECT 4: MBR Solar -->
                 <div x-show="filter === 'all' || filter === 'institutional'" class="project-card glass rounded-3xl overflow-hidden flex flex-col">
                     <div class="h-48 overflow-hidden relative">
-                        <!-- REPLACE THIS URL WITH YOUR OWN SCREENSHOT -->
-                        <img src="https://images.unsplash.com/photo-1509391366360-2b1bb FedEx-8f7?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover" alt="Solar Park">
+                        <img src="solar.jpg" class="w-full h-full object-cover" alt="Solar Park">
                         <div class="absolute top-4 right-4 px-3 py-1 glass rounded-full text-[10px] font-bold text-yellow-400 uppercase">Capital Opt</div>
                     </div>
                     <div class="p-6 flex-grow">
@@ -213,8 +205,7 @@
                 <!-- PROJECT 5: Dissertation -->
                 <div x-show="filter === 'all' || filter === 'academic'" class="project-card glass rounded-3xl overflow-hidden flex flex-col">
                     <div class="h-48 overflow-hidden relative">
-                        <!-- REPLACE THIS URL WITH YOUR OWN SCREENSHOT -->
-                        <img src="https://images.unsplash.com/photo-1454165833767-027ffca91c1e?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover" alt="Research">
+                        <img src="dissertation.jpg" class="w-full h-full object-cover" alt="Research">
                         <div class="absolute top-4 right-4 px-3 py-1 glass rounded-full text-[10px] font-bold text-slate-400 uppercase">Master's Thesis</div>
                     </div>
                     <div class="p-6 flex-grow">
